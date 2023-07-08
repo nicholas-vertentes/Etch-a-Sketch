@@ -1,8 +1,17 @@
-let gridDimension = 1
+let gridDimension = 16
 
-const grid = document.querySelector(".grid");
+createGrid(gridDimension)
 
-for (let i = 0; i < (gridDimension * gridDimension); i++){
-  const gridSquare = document.createElement('div');
-  grid.appendChild(gridSquare);
+function createGrid(gridHeight) {
+
+  const grid = document.querySelector(".grid");
+  grid.innerHTML = "";
+
+  for (let i = 0; i < (gridHeight * gridHeight); i++) {
+    const gridSquare = document.createElement('div');
+    gridSquare.style.height = `${100 / gridHeight}%`
+    gridSquare.style.width = `${100 / gridHeight}%`
+    grid.appendChild(gridSquare);
+  }
 }
+
