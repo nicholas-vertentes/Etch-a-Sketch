@@ -75,3 +75,29 @@ html{
   margin-top: 5px;
   font-size: x-large;
 }
+
+.gridContainer{
+  border: 1px solid black;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.leftMenu{
+  width: 50px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: 1px solid black;
+}
+
+.rightMenu{
+  width: 50px;
+
+  border: 1px solid black;
+}
