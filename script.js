@@ -47,6 +47,9 @@ function createGrid(gridHeight) {
   window.addEventListener("mouseup", function () {
     gridSquares.forEach(gridSquare => gridSquare.removeEventListener("mouseover", colorSquare));
   });
+  window.ondragstart = () => {
+    return false;
+  }
 }
 
 
