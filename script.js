@@ -1,21 +1,31 @@
 let color = "black";
+let mode = "color"
 
 // Initialize Grid
 createGrid(16);
 
 
+
+
 // Slider Functionality
 const slider = document.querySelector("#myRange");
 const sliderValue = document.querySelector(".sliderValue");
-sliderValue.textContent = `${ slider.value } x ${slider.value}`
+sliderValue.textContent = `${slider.value} x ${slider.value}`;
 slider.oninput = function () {
-  sliderValue.textContent = `${slider.value} x ${slider.value}`
+  sliderValue.textContent = `${slider.value} x ${slider.value}`;
   createGrid(slider.value);
 }
 
+// Color Picker
+const colorPicker = document.querySelector("#colorPicker");
+colorPicker.oninput = function () {
+  color = colorPicker.value;
+}
+
+
+
 
 // Function Definitions
-
 function colorSquare(e) {
   e.target.style.backgroundColor = color
 }

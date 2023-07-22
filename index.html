@@ -12,11 +12,25 @@
     <div class="title">Etch-a-Sketch</div>
     <div class="gridContainer">
       <div class="leftMenu">
-        <div>Hello</div>
-        <div>hi</div>
+        <div class="colorMenu">
+          <label for="colorPicker">Select Color:</label>
+          <div class="colorPickerContainer">
+            <input type="color" id="colorPicker">
+          </div>
+        </div>
       </div>
       <div class="grid"></div>
-      <div class="rightMenu"></div>
+      <div class="rightMenu">
+        <div class="colorMode">
+          Color Mode
+        </div>
+        <div class="eraserMode">
+          Eraser
+        </div>
+        <div class="clearMode">
+          Clear
+        </div>
+      </div>
     </div>
     <div class="slidercontainer">
       <input type="range" min="1" max="64" value="16" class="slider" id="myRange">
