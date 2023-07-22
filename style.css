@@ -11,7 +11,7 @@ html,
 }
 
 html{
-  background: #e6e6e6;
+  background: #edecec;
   caret-color: transparent;
 }
 
@@ -81,7 +81,7 @@ html{
 }
 
 .gridContainer{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   gap: 50px;
   justify-content: center;
@@ -97,7 +97,7 @@ html{
   justify-content: space-evenly;
   align-items: flex-end;
 
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .rightMenu{
@@ -110,7 +110,7 @@ html{
   align-items: flex-start;
   gap: 50px;
 
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .functionButtons{
@@ -162,6 +162,7 @@ html{
   box-shadow: 0px 3px 6px #0000001A;
   padding: 0;
   margin: -30px 0 0 -30px;
+  cursor: pointer;
 }
 
 .gridCheckboxContainer{
@@ -179,4 +180,5 @@ html{
   width: 20px;
   height: 20px;
   accent-color: black;
+  cursor: pointer;
 }
