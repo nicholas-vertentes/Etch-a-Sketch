@@ -1,10 +1,23 @@
 let color = "black";
-let mode = "color"
+let mode = "colorMode"
+let gridSize = 16
 
 // Initialize Grid
-createGrid(16);
+createGrid(gridSize);
 
+//Function Buttons
+const functionButtons = document.querySelectorAll(".rightMenu > div:not(.clearMode)");
+functionButtons.forEach(button => button.addEventListener("click", selectButton));
 
+const colorButton = document.querySelector(".colorMode");
+colorButton.style.backgroundColor = "black";
+colorButton.style.color = "white";
+
+//Clear Button
+const clearButton = document.querySelector(".clearMode");
+clearButton.addEventListener("click", function () {
+  createGrid(gridSize)
+})
 
 
 // Slider Functionality
@@ -13,19 +26,36 @@ const sliderValue = document.querySelector(".sliderValue");
 sliderValue.textContent = `${slider.value} x ${slider.value}`;
 slider.oninput = function () {
   sliderValue.textContent = `${slider.value} x ${slider.value}`;
-  createGrid(slider.value);
+  gridSize = slider.value;
+  createGrid(gridSize);
 }
 
 // Color Picker
 const colorPicker = document.querySelector("#colorPicker");
 colorPicker.oninput = function () {
-  color = colorPicker.value;
+  if (mode === "colorMode") {
+    color = colorPicker.value;
+  }
 }
 
 
-
-
 // Function Definitions
+function selectButton(e) {
+  functionButtons.forEach(button => button.style.backgroundColor = "");
+  functionButtons.forEach(button => button.style.color = "black");
+
+  e.target.style.backgroundColor = "black";
+  e.target.style.color = "white";
+  mode = e.target.className;
+
+  if (mode === "colorMode") {
+    color = colorPicker.value;
+  }
+  else if (mode === "eraserMode") {
+    color = "white"
+  }
+}
+
 function colorSquare(e) {
   e.target.style.backgroundColor = color
 }
