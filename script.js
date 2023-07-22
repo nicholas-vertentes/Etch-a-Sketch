@@ -1,12 +1,13 @@
 let color = "black";
 let mode = "colorMode"
 let gridSize = 16
+let borders = false
 
 // Initialize Grid
 createGrid(gridSize);
 
 //Function Buttons
-const functionButtons = document.querySelectorAll(".rightMenu > div:not(.clearMode)");
+const functionButtons = document.querySelectorAll(".functionButtons > div:not(.clearMode)");
 functionButtons.forEach(button => button.addEventListener("click", selectButton));
 
 const colorButton = document.querySelector(".colorMode");
@@ -19,6 +20,19 @@ clearButton.addEventListener("click", function () {
   createGrid(gridSize)
 })
 
+//Grid Checkbox
+const gridCheckbox = document.querySelector("#gridCheckbox");
+gridCheckbox.addEventListener("click", function () {
+  const gridSquares = document.querySelectorAll(".grid > div");
+  if (gridCheckbox.checked == true) {
+    borders = true;
+    gridSquares.forEach(square => square.style.border = "1px solid black")
+  }
+  else {
+    borders = false;
+    gridSquares.forEach(square => square.style.border = "")
+  }
+})
 
 // Slider Functionality
 const slider = document.querySelector("#myRange");
@@ -76,6 +90,10 @@ function createGrid(gridHeight) {
 
   // Drawing Functionality
   const gridSquares = document.querySelectorAll(".grid > div");
+  if (borders === true) {
+    gridSquares.forEach(square => square.style.border = "1px solid black")
+  }
+
   gridSquares.forEach(gridSquare => gridSquare.ondragstart = () => {
     return false;
   });
@@ -92,19 +110,3 @@ function createGrid(gridHeight) {
   }
 }
 
-
-
-
-// const grid = document.querySelector(".grid");
-// grid.addEventListener("mousedown", function () {
-//   const gridSquares = document.querySelectorAll(".grid > div");
-//   gridSquares.forEach(gridSquare => gridSquare.addEventListener("mouseover", colorSquare));
-// });
-// grid.addEventListener("mouseup", function () {
-//   const gridSquares = document.querySelectorAll(".grid > div");
-//   gridSquares.forEach(gridSquare => gridSquare.removeEventListener("mouseover", colorSquare));
-// });
-
-
-// const gridSquares = document.querySelectorAll(".grid > div");
-// gridSquares.forEach(gridSquare => gridSquare.addEventListener("mouseover", colorSquare));

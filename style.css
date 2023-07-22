@@ -12,6 +12,7 @@ html,
 
 html{
   background: #e6e6e6;
+  caret-color: transparent;
 }
 
 .title{
@@ -34,10 +35,6 @@ html{
   flex-wrap: wrap;
   width: 500px;
   height: 500px;
-  border: 1px solid black;
-}
-
-.grid > div{
   border: 1px solid black;
 }
 
@@ -116,7 +113,15 @@ html{
   border: 1px solid black;
 }
 
-.rightMenu > div{
+.functionButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.functionButtons > div{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +132,7 @@ html{
   cursor: pointer;
 }
 
-.rightMenu > div:hover {
+.functionButtons > div:hover {
   scale: 1.05;
 }
 
@@ -157,4 +162,21 @@ html{
   box-shadow: 0px 3px 6px #0000001A;
   padding: 0;
   margin: -30px 0 0 -30px;
+}
+
+.gridCheckboxContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.gridCheckboxContainer > label{
+  font-size: large;
+}
+
+.gridCheckboxContainer > input[type="checkbox"]{
+  width: 20px;
+  height: 20px;
+  accent-color: black;
 }
